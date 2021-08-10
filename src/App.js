@@ -18,8 +18,12 @@ class App extends React.Component {
   render() {
     return (
       <Router history={hist}>
+        
         <Switch>
-          {
+          <Route exact path="/">
+            <Redirect to="/home"/>
+          </Route>
+          { 
             routes.map((prop,key) =>
               <Route 
                 path={prop.path}
