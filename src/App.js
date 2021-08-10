@@ -1,22 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// Author: Roman Yefimets
+// Purpose: main App component
+// created: Aug 9, 2021
 
-//import {DatePicker} from 'antd'
-import 'antd/dist/antd.css'; 
+import React from 'react';
+import "antd/dist/antd.css";
+import { createBrowserHistory } from "history";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+import routes from "./routes.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Roman Yefimets Portfolio
-        </p>
-        <p>
-          currently still in progress
-        </p>
-      </header>
-    </div>
-  );
+const hist = createBrowserHistory();
+
+
+
+// todo: make routes.js file and have mapping to navigation
+class App extends React.Component {
+
+  render() {
+    return (
+      <Router history={hist}>
+        <Switch>
+          {
+            routes.map((prop,key) =>
+              <Route 
+                path={prop.path}
+                component={prop.component}
+              />
+            )
+          }
+        </Switch>
+
+      </Router>
+    )
+  }
+
+
 }
 
 export default App;
+
+
