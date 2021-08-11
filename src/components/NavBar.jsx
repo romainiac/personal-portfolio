@@ -1,33 +1,41 @@
 import React from 'react';
+import routes from "../routes.js";
+import { Link} from "react-router-dom";
 
 import {  
     Menu  
   } 
   from 'antd';
-  
+
+import Item from 'antd/lib/list/Item';
+
 const { SubMenu } = Menu;
 
 class NavBar extends React.Component {
 
+
     render() {
         return (
             <div className="navbar">
-                <Menu mode="horizontal" style={styles.navbar}>
-                <Menu.Item key="Home">
-                    Home
-                </Menu.Item>
-                <Menu.Item key="Programming">
-                    Programming
-                </Menu.Item>
-                <Menu.Item key="Design">
-                    Design
-                </Menu.Item>
-                <Menu.Item key="Blog">
-                    Blog
-                </Menu.Item>
-                <Menu.Item key="About">
-                    About
-                </Menu.Item>
+                <Menu 
+                    mode="horizontal" 
+                    style={styles.navbar}
+                    selectedKeys={[this.props.selected]}
+                >
+                    {routes.map((prop, key) => 
+
+                        <Menu.Item key={prop.name}>
+                            <Link
+                                to={{
+                                    pathname: prop.path,
+                                }}
+                            
+                            >
+                                {prop.name}
+                            </Link>
+                        </Menu.Item>
+
+                    )}
                 </Menu>
              </div>
         )
@@ -36,9 +44,12 @@ class NavBar extends React.Component {
 
 export default NavBar;
 
+NavBar.defaultProps = {
+    selected: 0
+}
 
 const styles = {
     navbar: {
       justifyContent: 'center'
     }
-  }
+}
