@@ -4,38 +4,48 @@
 
 import React from 'react';
 import NavBar from '../components/NavBar'
+import { isMobile } from 'react-device-detect';
 
-import {Row, Col} from 'antd'
+import {Row, Col, Card} from 'antd'
 
 class BlogView extends React.Component {
 
   render() {
 
+    var midColumnSpan = 8;
+    var outColumnSpan = 8;
+    if (isMobile) {
+        midColumnSpan = 24;
+        outColumnSpan = 0;
+    }
+
     return (
         <div style={styles.view}>
             <Row >
-                <Col xs={1} sm={1} md={4} lg={8} xl={8} />
-                <Col xs={22} sm={22} md={16} lg={8} xl={8}>
-                        <h1>
-                            Article 3
-                        </h1>
+                <Col span={outColumnSpan}></Col>
+                <Col span={midColumnSpan}>
+                    <Card title={"Article 3"} bordered={false}>
                         <p>
-                            Something enlightening
+                            I read something that you should too
                         </p>
-                        <h1>
-                            Article 2
-                        </h1>
+                    </Card>
+                    <Card title={"Article 2"} bordered={false}>
                         <p>
-                            Something I ate that changed my life
+                            Here is a picture of something I ate that changed my life
                         </p>
-                        <h1>
-                            Article 1
-                        </h1>
+
+                    </Card>
+                    <Card title={"Article 1"} bordered={false}>
                         <p>
-                            Hey look i'm starting a blog. Maybe.
+                            So, I guess i decided to start a blog. I have not been doing much writing 
+                            because react is a pain 
                         </p>
+
+                    </Card>
                 </Col>
-                <Col xs={1} sm={1} md={4} lg={8} xl={8} />
+                <Col span={outColumnSpan}>
+
+                </Col>
             </Row>
         </div>
     )

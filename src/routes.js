@@ -23,7 +23,7 @@ var routes = [
         path: "/blog",
         name: "Blog",
         component: BlogView
-    },
+    }
 
 
 ]
