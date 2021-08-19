@@ -33,7 +33,6 @@ class BlogView extends React.Component {
                         <p>
                             Here is a picture of something I ate that changed my life
                         </p>
-
                     </Card>
                     <Card title={"Article 1"} bordered={false}>
                         <p>
