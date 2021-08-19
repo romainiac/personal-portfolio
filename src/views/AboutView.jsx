@@ -57,7 +57,7 @@ class AboutView extends React.Component {
 
       <AdaptiveCard>
         <MailOutlined style={{fontSize:'30px', paddingRight: '2%'}}/>
-        romanyefimets@gmail.com
+         romanyefimets@gmail.com
       </AdaptiveCard>
       <AdaptiveCard>
         <LinkedinOutlined style={{fontSize:'30px', paddingRight: '2%'}}/>

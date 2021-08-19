@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { isMobile } from 'react-device-detect';
+import { isMobile} from 'react-device-detect';
 
 import {Row, Col, Card} from 'antd'
 
@@ -12,8 +12,8 @@ class AdaptiveCard extends React.Component {
         var midColumnSpan = 8;
         var outColumnSpan = 8;
         if (isMobile) {
-            midColumnSpan = 24;
-            outColumnSpan = 0;
+            midColumnSpan = 22;
+            outColumnSpan = 1;
         }
 
         return (
