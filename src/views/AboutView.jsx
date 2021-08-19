@@ -3,21 +3,12 @@
 // created: Aug 9, 2021
 
 import React from 'react';
-import NavBar from '../components/NavBar'
-import profile from '../assets/profile-square.jpeg'
-import AdaptiveCard from '../components/AdaptiveCard';
 
-import {
-  Row, 
-  Col,
-  Avatar
-} 
-  from 'antd'
+import AdaptiveCard from '../components/AdaptiveCard';
 
 import   {
   LinkedinOutlined,
   GithubOutlined,
-  PhoneOutlined,
   MailOutlined
 }
 from   '@ant-design/icons'

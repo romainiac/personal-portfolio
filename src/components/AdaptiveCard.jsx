@@ -2,7 +2,7 @@ import React from 'react'
 
 import { isMobile} from 'react-device-detect';
 
-import {Row, Col, Card} from 'antd'
+import {Row, Col} from 'antd'
 
 // adaptive card layout based on the device type (mobile or not)
 class AdaptiveCard extends React.Component {
