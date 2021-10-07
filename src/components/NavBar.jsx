@@ -1,5 +1,5 @@
 import React from 'react';
-import routes from "../routes.js";
+import {navbarRoutes as routes} from '../routes/navbarRoutes'
 import { Link} from "react-router-dom";
 
 import {  

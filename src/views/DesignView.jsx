@@ -2,30 +2,29 @@
 // Purpose: main App component
 // created: Aug 9, 2021
 
-import React from 'react';
 import CardPhoto from '../assets/present-page.svg'
-import AvatarPhoto from '../assets/blush/The Band - Treble Clef.svg'
-
+import { useNavigate } from 'react-router-dom';
 import AdaptiveCard from '../components/AdaptiveCard';
+import { useState } from 'react';
 import {
-    Card,
-    Avatar
+    Card
 } from 'antd'
 
 
-
-import  {  EditOutlined, EllipsisOutlined, SettingOutlined  } from '@ant-design/icons';
-
 const { Meta } = Card;
 
-class DesignView extends React.Component {
+export const DesignView = () => {
 
-  render() {
+    const navigate = useNavigate();
+    const handleClick = () => navigate('/design/seattle-orchestra-app-design');
+
     return (
-        <div style={styles.view}>
-             
+        <div style={styles.view}>           
            <AdaptiveCard>
                 <Card 
+                hoverable={true}
+                onClick={handleClick}
+                title="Seattle Orchestra App Design"
                 cover={
                     <img
                         alt="card-photo"
@@ -36,23 +35,17 @@ class DesignView extends React.Component {
 
                     <Meta
 
-                    title="Seattle Orchestra App Design"
-                    description="Google UX Portfolio Project"
+                    title="Google UX Portfolio Project"
+                    description="click to view more"
                     />
                 </Card>
             </AdaptiveCard>
-
         </div>
     )
-  }
-
 }
-
-export default DesignView;
 
 const styles = {
     view: {
         paddingTop: "5%"
-
     }
 }
